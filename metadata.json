@@ -1,0 +1,6 @@
+{
+  "name": "Midam교육 연구소",
+  "description": "AI실무교육과 컴퓨터OA 전문 교육기관 - 오숙경 대표 강사의 현장 맞춤형 생성형 AI, 실무 엑셀, 프롬프트 엔지니어링, 업무자동화 교육",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
