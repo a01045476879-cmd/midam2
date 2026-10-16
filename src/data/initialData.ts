@@ -1,4 +1,5 @@
 import { Course, Post, Review, SiteConfig } from '../types';
+import { ASSETS } from '../assets/images';
 
 export const initialSiteConfig: SiteConfig = {
   instituteName: 'Midam교육 연구소',
@@ -20,7 +21,7 @@ export const initialSiteConfig: SiteConfig = {
   heroTitle: '변화하는 업무의 흐름을 주도하는',
   heroHighlight: '생성형 AI 실무 & 컴퓨터 OA 마스터',
   heroSubtitle: '오숙경 대표 강사의 1:1 맞춤형 실습 코칭. ChatGPT·Claude 프롬프트 엔지니어링부터 실무 엑셀·컴퓨터활용능력까지, 비전공자도 현업에서 즉시 써먹는 탄탄한 역량을 완성합니다.',
-  heroImage: '/src/assets/images/hero_ai_academy_1792163196717.jpg',
+  heroImage: ASSETS.hero,
   
   // Announcement banner
   showAnnouncementBar: true,
@@ -45,7 +46,7 @@ export const initialSiteConfig: SiteConfig = {
     metaTitle: 'Midam교육 연구소 | AI실무교육 · 컴퓨터OA 전문 교육기관 (군산 백토로)',
     metaDescription: '군산 대표 AI 및 컴퓨터 실무 교육기관 Midam교육 연구소. 오숙경 대표 강사의 생성형 AI 활용, ChatGPT 실무, 엑셀 데이터 분석, 컴활 1·2급, 직무역량 강화.',
     keywords: 'Midam교육연구소, 오숙경강사, 군산컴퓨터학원, AI실무교육, 프롬프트엔지니어링, 컴퓨터활용능력, 군산엑셀학원, ChatGPT교육',
-    ogImage: '/src/assets/images/hero_ai_academy_1792163196717.jpg',
+    ogImage: ASSETS.hero,
     canonicalUrl: 'https://midam-edu.kr',
   },
 };
@@ -65,7 +66,7 @@ export const initialCourses: Course[] = [
       '3주차: Claude & Perplexity를 활용한 논문/시장조사 및 정보 심층 분석',
       '4주차: 맞춤형 GPTs 만들기 및 팀 내 AI 활용 업무 표준 매뉴얼 제작',
     ],
-    image: '/src/assets/images/course_ai_prompt_1792163198645.jpg',
+    image: ASSETS.courseAiPrompt,
     highlightBadge: '수강 만족도 1위',
     isPopular: true,
     scheduleInfo: '화·목 저녁반 (19:00~21:00) / 토요 집중반 (10:00~14:00)',
@@ -87,7 +88,7 @@ export const initialCourses: Course[] = [
       '5주차: 파워쿼리(Power Query)를 활용한 매월 반복 데이터 1초 자동 병합',
       '6주차: 실무 종합 프로젝트: 우리 회사 월간 실적 대시보드 직접 완성하기',
     ],
-    image: '/src/assets/images/course_office_oa_1792163197850.jpg',
+    image: ASSETS.courseOfficeOa,
     highlightBadge: '직장인 선호도 1위',
     isPopular: true,
     scheduleInfo: '월·수 저녁반 (19:30~21:30) / 주말반',
@@ -108,7 +109,7 @@ export const initialCourses: Course[] = [
       '4주차: 웹 데이터 수집(스크래핑) 및 일일 보고서 자동 발송 파이프라인',
       '5주차: 실무 실전 캡스톤: 내 업무 1개 완전 자동화 구현 및 시연',
     ],
-    image: '/src/assets/images/hero_ai_academy_1792163196717.jpg',
+    image: ASSETS.hero,
     highlightBadge: '최신 트렌드 과정',
     isPopular: false,
     scheduleInfo: '수·금 오후반 (14:00~16:00) / 기업 단체반 협의',
@@ -129,7 +130,7 @@ export const initialCourses: Course[] = [
       '액세스 폼·보고서 컨트롤 속성 및 쿼리 작성 고난도 공략',
       '실전 모의고사 10회분 풀이 및 강사 직접 1:1 실시간 오답 코칭',
     ],
-    image: '/src/assets/images/course_office_oa_1792163197850.jpg',
+    image: ASSETS.courseOfficeOa,
     highlightBadge: '원패스 합격률 92%',
     isPopular: true,
     scheduleInfo: '오전반 (10:00~12:30) / 오후반 / 저녁반 상시 개설',
@@ -149,7 +150,7 @@ export const initialCourses: Course[] = [
       '모듈 C: 부서별 실무 엑셀 데이터 분석 및 자동화 템플릿 구축 실습',
       '모듈 D: 임직원 AI 리터러시 & 디지털 트랜스포메이션 마인드셋 특강',
     ],
-    image: '/src/assets/images/instructor_oh_1792163197271.jpg',
+    image: ASSETS.instructor,
     highlightBadge: '군산·전북권 출강',
     isPopular: false,
     scheduleInfo: '기업 방문 출강 또는 Midam교육 연구소 전용 실습실 대관 진행',

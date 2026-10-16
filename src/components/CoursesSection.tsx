@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSite } from '../context/SiteContext';
 import { Course } from '../types';
+import { resolveImagePath } from '../assets/images';
 import { ArrowUpRight, Clock, Plus, Sparkles, BookOpen } from 'lucide-react';
 
 export const CoursesSection: React.FC = () => {
@@ -65,7 +66,7 @@ export const CoursesSection: React.FC = () => {
               {/* Card Image Slot with Fallback */}
               <div className="relative aspect-[16/10] overflow-hidden bg-zinc-950">
                 <img
-                  src={course.image}
+                  src={resolveImagePath(course.image)}
                   alt={course.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

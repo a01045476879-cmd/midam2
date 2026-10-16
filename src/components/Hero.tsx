@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSite } from '../context/SiteContext';
+import { resolveImagePath } from '../assets/images';
 import { ArrowRight, BookOpen, MapPin, PhoneCall, CheckCircle2, Sparkles, Terminal, Cpu } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -181,7 +182,7 @@ export const Hero: React.FC = () => {
 
               {/* Main Image */}
               <img
-                src={config.heroImage}
+                src={resolveImagePath(config.heroImage)}
                 alt="Midam교육 연구소 최신 AI & 컴퓨터 실습 강의실"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"

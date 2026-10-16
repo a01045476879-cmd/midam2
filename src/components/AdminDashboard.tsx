@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSite } from '../context/SiteContext';
 import { Post, Course } from '../types';
+import { ASSETS, resolveImagePath } from '../assets/images';
 import { 
   X, Palette, FileText, BookOpen, Inbox, Globe, RefreshCw, 
   Download, Upload, Plus, Trash2, Edit3, Pin, Check, Copy, 
@@ -35,7 +36,7 @@ export const AdminDashboard: React.FC = () => {
     targetAudience: '',
     description: '',
     curriculumList: ['1주차: ', '2주차: ', '3주차: ', '4주차: '],
-    image: '/src/assets/images/course_ai_prompt_1792163198645.jpg',
+    image: ASSETS.courseAiPrompt,
     scheduleInfo: '평일 저녁반',
     feeInfo: '개별 상담',
     highlightBadge: '추천 과정',
@@ -1025,7 +1026,7 @@ export const AdminDashboard: React.FC = () => {
                   <div className="max-w-sm rounded-xl overflow-hidden bg-[#242424] border border-zinc-700 text-xs shadow-lg">
                     <div className="h-40 bg-zinc-900 overflow-hidden relative">
                       <img
-                        src={config.heroImage}
+                        src={resolveImagePath(config.heroImage)}
                         alt="SNS 카드 미리보기"
                         className="w-full h-full object-cover"
                       />

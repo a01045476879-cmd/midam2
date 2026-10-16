@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { initialCourses, initialPosts, initialReviews, initialSiteConfig } from '../data/initialData';
 import { Course, Inquiry, Post, Review, SiteConfig } from '../types';
+import { resolveImagePath } from '../assets/images';
 
 interface SiteContextType {
   config: SiteConfig;
@@ -61,7 +62,15 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [config, setConfig] = useState<SiteConfig>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.CONFIG);
-      return saved ? { ...initialSiteConfig, ...JSON.parse(saved) } : initialSiteConfig;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return {
+          ...initialSiteConfig,
+          ...parsed,
+          heroImage: resolveImagePath(parsed.heroImage || initialSiteConfig.heroImage),
+        };
+      }
+      return initialSiteConfig;
     } catch {
       return initialSiteConfig;
     }
@@ -71,7 +80,16 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [courses, setCourses] = useState<Course[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.COURSES);
-      return saved ? JSON.parse(saved) : initialCourses;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          return parsed.map((c: Course) => ({
+            ...c,
+            image: resolveImagePath(c.image),
+          }));
+        }
+      }
+      return initialCourses;
     } catch {
       return initialCourses;
     }
@@ -207,8 +225,20 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const importConfigJson = (jsonString: string): boolean => {
     try {
       const data = JSON.parse(jsonString);
-      if (data.config) setConfig(data.config);
-      if (Array.isArray(data.courses)) setCourses(data.courses);
+      if (data.config) {
+        setConfig({
+          ...data.config,
+          heroImage: resolveImagePath(data.config.heroImage),
+        });
+      }
+      if (Array.isArray(data.courses)) {
+        setCourses(
+          data.courses.map((c: Course) => ({
+            ...c,
+            image: resolveImagePath(c.image),
+          }))
+        );
+      }
       if (Array.isArray(data.posts)) setPosts(data.posts);
       if (Array.isArray(data.reviews)) setReviews(data.reviews);
       return true;

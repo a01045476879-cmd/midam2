@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSite } from '../context/SiteContext';
+import { ASSETS } from '../assets/images';
 import { Award, Briefcase, Sparkles, CheckCircle, Quote, Phone } from 'lucide-react';
 
 export const InstructorSection: React.FC = () => {
@@ -63,7 +64,7 @@ export const InstructorSection: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl w-full max-w-md aspect-[3/4] group">
               <img
-                src="/src/assets/images/instructor_oh_1792163197271.jpg"
+                src={ASSETS.instructor}
                 alt="Midam교육 연구소 대표 오숙경 강사"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
